@@ -32,7 +32,7 @@ try {
 const bookSchema = new mongoose.Schema({
   comments: [],
   title: { type: String, required: true },
-  commentCount: { type: Number, default: 0 },
+  commentcount: { type: Number, default: 0 },
 });
 
 // create new model
@@ -48,7 +48,7 @@ app.route('/')
 fccTestingRoutes(app);
 
 // Routing for API
-apiRoutes(app);
+apiRoutes(app, book);
 
 // 404 Not Found Middleware
 app.use((req, res) => {
