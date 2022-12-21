@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable no-undef */
 $(document).ready(() => {
   const items = [];
@@ -21,7 +22,7 @@ $(document).ready(() => {
   });
 
   let comments = [];
-  $('#display').on('click', 'li.bookItem', function () {
+  $('#display').on('click', 'li.bookItem', () => {
     $('#detailTitle').html(`<b>${itemsRaw[this.id].title}</b> (id: ${itemsRaw[this.id]._id})`);
     $.getJSON(`/api/books/${itemsRaw[this.id]._id}`, (data) => {
       comments = [];
